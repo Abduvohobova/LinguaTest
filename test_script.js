@@ -1,6 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const selectedTestUrl = localStorage.getItem('selectedTestUrl');
-
     const startScreen = document.getElementById('start-screen');
     const testScreen = document.getElementById('test-screen');
     const resultsScreen = document.getElementById('results-screen');
@@ -19,8 +17,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const resultTextEl = document.getElementById('result-text');
     const returnBtn = document.getElementById('return-btn');
     const resubmitBtn = document.getElementById('resubmit-btn');
-
     const savedTheme = localStorage.getItem('theme');
+    
+    const urlParams = new URLSearchParams(window.location.search);
+    const selectedTestUrl = urlParams.get('testUrl');
+
+    if (!selectedTestUrl) {
+        window.location.href = 'index.html';
+        return;
+    }
+
     if (savedTheme === 'light-mode') {
         document.body.classList.add('light-mode');
         document.documentElement.classList.add('light-mode');

@@ -1,13 +1,3 @@
-const slugify = (str) => {
-    return str
-        .toLowerCase()
-        .replace(/\s+/g, '-') // Bo'shliqlarni chiziqcha (-) bilan almashtiradi
-        .replace(/[^\w-]+/g, '') // Belgilarni olib tashlaydi
-        .replace(/--+/g, '-') // Qo'shaloq chiziqchalarni bittaga almashtiradi
-        .replace(/^-+/, '') // Boshidagi chiziqchalarni olib tashlaydi
-        .replace(/-+$/, ''); // Oxiridagi chiziqchalarni olib tashlaydi
-};
-
 document.addEventListener('DOMContentLoaded', () => {
     const themeToggleButton = document.getElementById('theme-toggle-btn');
     const startTestNavBtn = document.getElementById('nav-btn');
@@ -561,9 +551,6 @@ document.addEventListener('DOMContentLoaded', () => {
             cardLink.href = 'test_page.html';
             cardLink.classList.add('card-link');
 
-            const testSlug = slugify(test.name);
-            cardLink.href = `${testSlug}.html`;
-
             cardLink.onclick = () => {
                 localStorage.setItem('selectedTestUrl', test.url);
                 localStorage.setItem('selectedTestTitle', test.title);
@@ -604,8 +591,9 @@ document.addEventListener('DOMContentLoaded', () => {
             });
             filteredTests.forEach(test => {
                 const cardLink = document.createElement('a');
-                cardLink.href = test.url;
                 cardLink.classList.add('card-link');
+                
+                cardLink.href = `test_page.html?testUrl=${encodeURIComponent(test.url)}`;
 
                 cardLink.innerHTML = `
                     <div class="test-card">

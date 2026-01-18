@@ -1,13 +1,5 @@
 "use strict";
 
-var slugify = function slugify(str) {
-  return str.toLowerCase().replace(/\s+/g, '-') // Bo'shliqlarni chiziqcha (-) bilan almashtiradi
-  .replace(/[^\w-]+/g, '') // Belgilarni olib tashlaydi
-  .replace(/--+/g, '-') // Qo'shaloq chiziqchalarni bittaga almashtiradi
-  .replace(/^-+/, '') // Boshidagi chiziqchalarni olib tashlaydi
-  .replace(/-+$/, ''); // Oxiridagi chiziqchalarni olib tashlaydi
-};
-
 document.addEventListener('DOMContentLoaded', function () {
   var themeToggleButton = document.getElementById('theme-toggle-btn');
   var startTestNavBtn = document.getElementById('nav-btn');
@@ -494,8 +486,6 @@ document.addEventListener('DOMContentLoaded', function () {
       var cardLink = document.createElement('a');
       cardLink.href = 'test_page.html';
       cardLink.classList.add('card-link');
-      var testSlug = slugify(test.name);
-      cardLink.href = "".concat(testSlug, ".html");
 
       cardLink.onclick = function () {
         localStorage.setItem('selectedTestUrl', test.url);
@@ -523,8 +513,8 @@ document.addEventListener('DOMContentLoaded', function () {
       });
       filteredTests.forEach(function (test) {
         var cardLink = document.createElement('a');
-        cardLink.href = test.url;
         cardLink.classList.add('card-link');
+        cardLink.href = "test_page.html?testUrl=".concat(encodeURIComponent(test.url));
         cardLink.innerHTML = "\n                    <div class=\"test-card\">\n                        <div class=\"icon\">\n                            <i class=\"".concat(test.iconClass, "\"></i>\n                        </div>\n                        <h2>").concat(test.title, "</h2>\n                        <p>").concat(test.description, "</p>\n                        <div class=\"test-meta\">\n                            <span><i class=\"bi bi-clock\"></i> ").concat(test.duration, "</span>\n                            <span><i class=\"bi bi-question-circle\"></i> ").concat(test.questions, "</span>\n                        </div>\n                    </div>\n                ");
         cardContainer.appendChild(cardLink);
       });
