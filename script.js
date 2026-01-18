@@ -548,9 +548,9 @@ document.addEventListener('DOMContentLoaded', () => {
     function createAndAppendCards() {
         testsData.forEach(test => {
             const cardLink = document.createElement('a');
-            cardLink.href = `test_page.html?testUrl=${encodeURIComponent(test.url)}`; 
             cardLink.classList.add('card-link');
-
+            
+            cardLink.href = `test_page.html?testUrl=${encodeURIComponent(test.url)}`;
             cardLink.onclick = () => {
                 localStorage.setItem('selectedTestUrl', test.url);
                 localStorage.setItem('selectedTestTitle', test.title);
