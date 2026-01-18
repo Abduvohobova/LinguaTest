@@ -1,5 +1,13 @@
 "use strict";
 
+var slugify = function slugify(str) {
+  return str.toLowerCase().replace(/\s+/g, '-') // Bo'shliqlarni chiziqcha (-) bilan almashtiradi
+  .replace(/[^\w-]+/g, '') // Belgilarni olib tashlaydi
+  .replace(/--+/g, '-') // Qo'shaloq chiziqchalarni bittaga almashtiradi
+  .replace(/^-+/, '') // Boshidagi chiziqchalarni olib tashlaydi
+  .replace(/-+$/, ''); // Oxiridagi chiziqchalarni olib tashlaydi
+};
+
 document.addEventListener('DOMContentLoaded', function () {
   var themeToggleButton = document.getElementById('theme-toggle-btn');
   var startTestNavBtn = document.getElementById('nav-btn');
@@ -486,6 +494,8 @@ document.addEventListener('DOMContentLoaded', function () {
       var cardLink = document.createElement('a');
       cardLink.href = 'test_page.html';
       cardLink.classList.add('card-link');
+      var testSlug = slugify(test.name);
+      cardLink.href = "".concat(testSlug, ".html");
 
       cardLink.onclick = function () {
         localStorage.setItem('selectedTestUrl', test.url);

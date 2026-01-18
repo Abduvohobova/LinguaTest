@@ -911,7 +911,7 @@ body {
         }
 
         .test-container {
-            background-color: $light-bg-main;
+            background-color: #f0f2f5;
             box-shadow: 5px 5px 50px 15px rgba(0, 0, 0, 0.1);
 
             h1 {
@@ -1168,6 +1168,10 @@ body {
         align-items: center !important;
         justify-content: center !important;
     }
+    .test-container {
+        max-width: 800px;
+        margin: 20px auto;
+    }
 }
 
 @media (max-width: 576px) {
@@ -1227,5 +1231,34 @@ body {
             }
         }
 
+    }
+    .test-bg {
+        padding: 0 !important; /* Fon atrofidagi bo'shliqni yo'qotish */
+    }
+
+    .test-container {
+        width: 100% !important; /* To'liq ekran kengligi */
+        margin: 0 !important;
+        border-radius: 0 !important;
+        background-color: #f0f2f5; 
+        min-height: 100vh !important;
+    }
+
+    .test-card-question {
+        padding: 20px !important; /* Ichki bo'shliqni kamaytirish */
+    }
+
+    /* Natijalar ekrani uchun tugmalarni moslash */
+    .result-btns {
+        flex-direction: column !important;
+        gap: 10px !important;
+        button {
+            width: 100% !important;
+        }
+    }
+    
+    /* Progress paneli shriftini moslash */
+    .progress-area {
+        font-size: 14px !important;
     }
 }
