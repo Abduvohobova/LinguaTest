@@ -548,7 +548,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function createAndAppendCards() {
         testsData.forEach(test => {
             const cardLink = document.createElement('a');
-            cardLink.href = 'test_page.html';
+            cardLink.href = `test_page.html?testUrl=${encodeURIComponent(test.url)}`; 
             cardLink.classList.add('card-link');
 
             cardLink.onclick = () => {
@@ -592,7 +592,7 @@ document.addEventListener('DOMContentLoaded', () => {
             filteredTests.forEach(test => {
                 const cardLink = document.createElement('a');
                 cardLink.classList.add('card-link');
-                
+
                 cardLink.href = `test_page.html?testUrl=${encodeURIComponent(test.url)}`;
 
                 cardLink.innerHTML = `

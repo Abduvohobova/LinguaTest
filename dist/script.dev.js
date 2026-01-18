@@ -484,7 +484,7 @@ document.addEventListener('DOMContentLoaded', function () {
   function createAndAppendCards() {
     testsData.forEach(function (test) {
       var cardLink = document.createElement('a');
-      cardLink.href = 'test_page.html';
+      cardLink.href = "test_page.html?testUrl=".concat(encodeURIComponent(test.url));
       cardLink.classList.add('card-link');
 
       cardLink.onclick = function () {
