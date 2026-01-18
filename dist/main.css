@@ -990,12 +990,10 @@ body .light-mode .options-container .option:hover {
 
   .test-bg {
     padding: 0 !important;
-    /* Fon atrofidagi bo'shliqni yo'qotish */
   }
 
   .test-container {
     width: 100% !important;
-    /* To'liq ekran kengligi */
     margin: 0 !important;
     border-radius: 0 !important;
     background-color: #f0f2f5;
@@ -1004,10 +1002,8 @@ body .light-mode .options-container .option:hover {
 
   .test-card-question {
     padding: 20px !important;
-    /* Ichki bo'shliqni kamaytirish */
   }
 
-  /* Natijalar ekrani uchun tugmalarni moslash */
   .result-btns {
     flex-direction: column !important;
     gap: 10px !important;
@@ -1016,7 +1012,6 @@ body .light-mode .options-container .option:hover {
     width: 100% !important;
   }
 
-  /* Progress paneli shriftini moslash */
   .progress-area {
     font-size: 14px !important;
   }

@@ -18,22 +18,17 @@ document.addEventListener('DOMContentLoaded', function () {
     body.classList.add('light-mode');
     icon.classList.remove('bi-moon');
     icon.classList.add('bi-sun');
-  } // Mobil menyuni ochish/yopish logikasi (script.js ichiga)
-  // script.js ichida:
-
+  }
 
   var hamburgerBtn = document.getElementById('hamburger-btn');
   var mobileNavContainer = document.getElementById('mobile-nav-container');
 
   if (hamburgerBtn && mobileNavContainer) {
     hamburgerBtn.addEventListener('click', function () {
-      mobileNavContainer.classList.toggle('active'); // --- MUAMMOLARNI HAL QILUVCHI QISM ---
-
+      mobileNavContainer.classList.toggle('active');
       var icon = hamburgerBtn.querySelector('i');
-      icon.classList.toggle('bi-list'); // bi-list ni o'chiradi
-
-      icon.classList.toggle('bi-x'); // bi-x ni qo'shadi (yoki aksincha)
-      // -------------------------------------
+      icon.classList.toggle('bi-list');
+      icon.classList.toggle('bi-x');
     });
   } //////////////////////////////////// 
 

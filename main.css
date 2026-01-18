@@ -976,19 +976,18 @@ body .light-mode .options-container .option:hover {
     gap: 10px;
   }
   .test-bg {
-    padding: 0 !important; /* Fon atrofidagi bo'shliqni yo'qotish */
+    padding: 0 !important;
   }
   .test-container {
-    width: 100% !important; /* To'liq ekran kengligi */
+    width: 100% !important;
     margin: 0 !important;
     border-radius: 0 !important;
     background-color: #f0f2f5;
     min-height: 100vh !important;
   }
   .test-card-question {
-    padding: 20px !important; /* Ichki bo'shliqni kamaytirish */
+    padding: 20px !important;
   }
-  /* Natijalar ekrani uchun tugmalarni moslash */
   .result-btns {
     flex-direction: column !important;
     gap: 10px !important;
@@ -996,7 +995,6 @@ body .light-mode .options-container .option:hover {
   .result-btns button {
     width: 100% !important;
   }
-  /* Progress paneli shriftini moslash */
   .progress-area {
     font-size: 14px !important;
   }

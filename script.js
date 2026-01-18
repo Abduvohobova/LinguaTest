@@ -19,8 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
         icon.classList.add('bi-sun');
     }
 
-    // Mobil menyuni ochish/yopish logikasi (script.js ichiga)
-    // script.js ichida:
     const hamburgerBtn = document.getElementById('hamburger-btn');
     const mobileNavContainer = document.getElementById('mobile-nav-container');
 
@@ -28,11 +26,9 @@ document.addEventListener('DOMContentLoaded', () => {
         hamburgerBtn.addEventListener('click', () => {
             mobileNavContainer.classList.toggle('active');
 
-            // --- MUAMMOLARNI HAL QILUVCHI QISM ---
             const icon = hamburgerBtn.querySelector('i');
-            icon.classList.toggle('bi-list'); // bi-list ni o'chiradi
-            icon.classList.toggle('bi-x'); // bi-x ni qo'shadi (yoki aksincha)
-            // -------------------------------------
+            icon.classList.toggle('bi-list'); 
+            icon.classList.toggle('bi-x'); 
         });
     }
 
@@ -549,8 +545,8 @@ document.addEventListener('DOMContentLoaded', () => {
         testsData.forEach(test => {
             const cardLink = document.createElement('a');
             cardLink.classList.add('card-link');
-            
-            cardLink.href = `test_page.html?testUrl=${encodeURIComponent(test.url)}`;
+            cardLink.href = `test_page.html?testUrl=${encodeURIComponent(test.url)}`; 
+
             cardLink.onclick = () => {
                 localStorage.setItem('selectedTestUrl', test.url);
                 localStorage.setItem('selectedTestTitle', test.title);

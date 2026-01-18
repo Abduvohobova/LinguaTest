@@ -39,9 +39,9 @@ document.addEventListener('DOMContentLoaded', () => {
     let timerInterval;
     let questions = [];
 
-    const currentTestTitle = localStorage.getItem('selectedTestTitle') || "Test Nomi Topilmadi";
-    const currentTestDesc = localStorage.getItem('selectedTestDescription') || "Izoh topilmadi.";
-    const currentTestIconClass = localStorage.getItem('selectedTestIconClass') || "fas fa-question-circle";
+    const currentTestTitle = localStorage.getItem('selectedTestTitle');
+    const currentTestDesc = localStorage.getItem('selectedTestDescription');
+    const currentTestIconClass = localStorage.getItem('selectedTestIconClass');
 
     testTitleEl.textContent = currentTestTitle;
     testDescriptionEl.textContent = currentTestDesc;

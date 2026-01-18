@@ -39,9 +39,9 @@ document.addEventListener('DOMContentLoaded', function () {
   var remainingTime = TEST_DURATION_MIN * 60;
   var timerInterval;
   var questions = [];
-  var currentTestTitle = localStorage.getItem('selectedTestTitle') || "Test Nomi Topilmadi";
-  var currentTestDesc = localStorage.getItem('selectedTestDescription') || "Izoh topilmadi.";
-  var currentTestIconClass = localStorage.getItem('selectedTestIconClass') || "fas fa-question-circle";
+  var currentTestTitle = localStorage.getItem('selectedTestTitle');
+  var currentTestDesc = localStorage.getItem('selectedTestDescription');
+  var currentTestIconClass = localStorage.getItem('selectedTestIconClass');
   testTitleEl.textContent = currentTestTitle;
   testDescriptionEl.textContent = currentTestDesc;
   testIconEl.className = currentTestIconClass;
